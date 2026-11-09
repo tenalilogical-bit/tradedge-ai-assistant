@@ -1,0 +1,4 @@
+pandas>=2.0          # 1-min bars in the live caches
+requests>=2.31       # Telegram Bot API (ai_chat.py)
+google-genai>=1.0    # Gemini function calling + embeddings (only with an API key)
+pytest>=8.0          # tests

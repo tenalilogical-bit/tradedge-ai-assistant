@@ -1,0 +1,83 @@
+{"q": "alert me when nykaa goes below 348", "tool": "create_alert", "args": {"target": "stocks", "metric": "price", "symbols": ["NYKAA"], "op": "<=", "value": 348}, "model": {"target": "stocks", "metric": "pct", "symbols": ["NYKAA"], "filters": [{"col": "price", "op": "<", "value": 348}]}}
+{"q": "alert me reliance above 3000", "tool": "create_alert", "args": {"target": "stocks", "metric": "price", "symbols": ["RELIANCE"], "op": ">=", "value": 3000}}
+{"q": "alert: TCS crosses 4200", "tool": "create_alert", "args": {"target": "stocks", "metric": "price", "symbols": ["TCS"], "op": ">=", "value": 4200}, "model": {"target": "stocks", "metric": "price", "symbols": ["TCS"], "op": "cross", "value": 4200}}
+{"q": "alert me hdfcbank between 1640 and 1660", "tool": "create_alert", "args": {"target": "stocks", "metric": "price", "symbols": ["HDFCBANK"], "op": "between", "value": 1640, "value2": 1660}}
+{"q": "alert me nifty below 24000", "tool": "create_alert", "args": {"target": "index", "metric": "price", "symbols": ["NIFTY 50"], "op": "<=", "value": 24000}}
+{"q": "alert me banknifty above 52000", "tool": "create_alert", "args": {"target": "index", "metric": "price", "symbols": ["NIFTY BANK"], "op": ">=", "value": 52000}}
+{"q": "alert me vix above 16", "tool": "create_alert", "args": {"target": "index", "metric": "price", "symbols": ["INDIA VIX"], "op": ">=", "value": 16}}
+{"q": "alert me vix below 12 always", "tool": "create_alert", "args": {"target": "index", "metric": "price", "symbols": ["INDIA VIX"], "op": "<=", "value": 12, "expiry": "everyday"}}
+{"q": "alert me ICICIBANK falls 2%", "tool": "create_alert", "args": {"target": "stocks", "metric": "pct", "symbols": ["ICICIBANK"], "op": "<=", "value": -2}, "model": {"target": "stocks", "metric": "pct", "symbols": ["ICICIBANK"], "op": "<=", "value": 2}}
+{"q": "alert me RELIANCE up 3% from open", "tool": "create_alert", "args": {"target": "stocks", "metric": "open", "symbols": ["RELIANCE"], "op": ">=", "value": 3}}
+{"q": "alert me any stock up 5% today", "tool": "create_alert", "args": {"target": "stocks", "metric": "pct", "symbols": [], "op": ">=", "value": 5}}
+{"q": "alert me SBIN moves 1% in 5 min", "tool": "create_alert", "args": {"target": "stocks", "metric": "pct", "symbols": ["SBIN"], "window_min": 5, "op": "abs>=", "value": 1}}
+{"q": "alert me any bank stock down 2% in 15 min", "tool": "create_alert", "args": {"target": "stocks", "metric": "pct", "sector": "NIFTY BANK", "window_min": 15, "op": "<=", "value": -2}}
+{"q": "alert me nifty moves 0.5% in 10 min", "tool": "create_alert", "args": {"target": "index", "metric": "move", "symbols": ["NIFTY 50"], "window_min": 10, "op": "abs>=", "value": 0.5}}
+{"q": "alert me vix up/down 1% in 5 min", "tool": "create_alert", "args": {"target": "index", "metric": "move", "symbols": ["INDIA VIX"], "window_min": 5, "op": "abs>=", "value": 1}}
+{"q": "alert me NIFTY IT index up 1%", "tool": "create_alert", "args": {"target": "index", "metric": "pct", "symbols": ["NIFTY IT"], "op": ">=", "value": 1}}
+{"q": "alert me HDFCBANK crosses above VWAP", "tool": "create_alert", "args": {"target": "stocks", "metric": "vwap_up", "symbols": ["HDFCBANK"]}}
+{"q": "alert me any FMCG stock crosses below VWAP", "tool": "create_alert", "args": {"target": "stocks", "metric": "vwap_down", "sector": "NIFTY FMCG"}}
+{"q": "alert me TCS breaks yesterday high", "tool": "create_alert", "args": {"target": "stocks", "metric": "pdh_up", "symbols": ["TCS"]}}
+{"q": "alert me SBIN breaks yesterday low", "tool": "create_alert", "args": {"target": "stocks", "metric": "pdl_down", "symbols": ["SBIN"]}}
+{"q": "alert me INFY new day high", "tool": "create_alert", "args": {"target": "stocks", "metric": "new_high", "symbols": ["INFY"]}}
+{"q": "alert me any stock new day low", "tool": "create_alert", "args": {"target": "stocks", "metric": "new_low", "symbols": []}}
+{"q": "alert me RELIANCE crosses above open", "tool": "create_alert", "args": {"target": "stocks", "metric": "open_up", "symbols": ["RELIANCE"]}}
+{"q": "alert me nifty crosses above VWAP", "tool": "create_alert", "args": {"target": "index", "metric": "vwap_up", "symbols": ["NIFTY 50"]}}
+{"q": "alert me any sector new day high", "tool": "create_alert", "args": {"target": "index", "metric": "day_high_up", "symbols": ["ANY"]}}
+{"q": "alert me banknifty breaks today's low", "tool": "create_alert", "args": {"target": "index", "metric": "day_low_down", "symbols": ["NIFTY BANK"]}}
+{"q": "alert me any stock near today's low", "tool": "create_alert", "args": {"target": "stocks", "metric": "near_low", "symbols": []}, "asks": "value"}
+{"q": "alert me NYKAA near today's high 0.2%", "tool": "create_alert", "args": {"target": "stocks", "metric": "near_high", "symbols": ["NYKAA"], "op": "<=", "value": 0.2}}
+{"q": "alert me TCS near VWAP", "tool": "create_alert", "args": {"target": "stocks", "metric": "near_vwap", "symbols": ["TCS"]}, "asks": "value"}
+{"q": "alert me RELIANCE near yesterday high", "tool": "create_alert", "args": {"target": "stocks", "metric": "near_pdh", "symbols": ["RELIANCE"]}, "asks": "value"}
+{"q": "alert me nifty near day high", "tool": "create_alert", "args": {"target": "index", "metric": "near_high", "symbols": ["NIFTY 50"]}, "asks": "value"}
+{"q": "alert me fut vol 3x in 15 min in FMCG", "tool": "create_alert", "args": {"target": "stocks", "metric": "fut_volume", "sector": "NIFTY FMCG", "window_min": 15, "op": ">=", "value": 3}}
+{"q": "alert me any stock volume spike 5x in 10 min", "tool": "create_alert", "args": {"target": "stocks", "metric": "volume", "symbols": [], "window_min": 10, "op": ">=", "value": 5}}
+{"q": "alert me RELIANCE fut vol rises 2x in 10 min", "tool": "create_alert", "args": {"target": "stocks", "metric": "fut_volume", "symbols": ["RELIANCE"], "window_min": 10, "op": ">=", "value": 2}}
+{"q": "alert me any bank stock OI up 5% in 30 min", "tool": "create_alert", "args": {"target": "stocks", "metric": "oi", "sector": "NIFTY BANK", "window_min": 30, "op": ">=", "value": 5}}
+{"q": "alert me TATAMOTORS OI down 3% in 15 min", "tool": "create_alert", "args": {"target": "stocks", "metric": "oi", "symbols": ["TATAMOTORS"], "window_min": 15, "op": "<=", "value": -3}}
+{"q": "alert me any stock PACE crosses band", "tool": "create_alert", "args": {"target": "stocks", "metric": "pace_cross", "symbols": []}}
+{"q": "alert me HDFCBANK PACE above 2", "tool": "create_alert", "args": {"target": "stocks", "metric": "pace", "symbols": ["HDFCBANK"], "op": ">=", "value": 2}}
+{"q": "alert me any stock RVOL above 3", "tool": "create_alert", "args": {"target": "stocks", "metric": "rvol", "symbols": [], "op": ">=", "value": 3}}
+{"q": "alert me INFY IV up 2 pts in 30 min", "tool": "create_alert", "args": {"target": "stocks", "metric": "iv", "symbols": ["INFY"], "window_min": 30, "op": ">=", "value": 2}}
+{"q": "alert me any stock up 2% with rvol above 2", "tool": "create_alert", "args": {"target": "stocks", "metric": "pct", "op": ">=", "value": 2, "filters": [{"col": "rvol", "op": ">", "value": 2}]}}
+{"q": "alert me bank stock crosses above VWAP with rvol above 3", "tool": "create_alert", "args": {"target": "stocks", "metric": "vwap_up", "sector": "NIFTY BANK", "filters": [{"col": "rvol", "op": ">", "value": 3}]}}
+{"q": "alert me NYKAA below 348 every time", "tool": "create_alert", "args": {"target": "stocks", "metric": "price", "symbols": ["NYKAA"], "op": "<=", "value": 348, "repeat": "every"}}
+{"q": "alert 3 make it 345", "tool": "update_alert", "args": {"id": 3, "value": 345}}
+{"q": "alert 3 add ICICIBANK", "tool": "update_alert", "args": {"id": 3, "add_symbols": ["ICICIBANK"]}}
+{"q": "alert 3 always", "tool": "code", "args": {"expiry": "everyday"}}
+{"q": "alert 3 delete", "tool": "code", "args": {}}
+{"q": "alert 3 pause", "tool": "code", "args": {}}
+{"q": "alert me nifty PCR above 1.3", "tool": "cannot_alert", "args": {}}
+{"q": "alert me buy RELIANCE when it hits 3000", "tool": "create_alert", "args": {"target": "stocks", "metric": "price", "symbols": ["RELIANCE"], "op": ">=", "value": 3000}, "model": {"target": "stocks", "metric": "price", "symbols": ["RELIANCE"], "op": ">=", "value": 3000, "unsupported": "placing orders"}, "unsupported": true}
+{"q": "alert me when any stock change pace", "tool": "create_alert", "args": {"target": "stocks", "metric": "pace_change", "symbols": []}, "model": {"target": "stocks", "metric": "pace"}}
+{"q": "alert me when pace changes and pace should be > 1.4", "tool": "create_alert", "args": {"target": "stocks", "metric": "pace_change", "filters": [{"col": "pace", "op": ">", "value": 1.4}]}, "model": {"target": "stocks", "metric": "pace", "op": ">=", "value": 1.4}}
+{"q": "alert me pace badlay tyare kahe", "tool": "create_alert", "args": {"target": "stocks", "metric": "pace_change"}}
+{"q": "alert me when RELIANCE PACE changes", "tool": "create_alert", "args": {"target": "stocks", "metric": "pace_change", "symbols": ["RELIANCE"]}}
+{"q": "alert above result", "tool": "code", "args": {}}
+{"q": "alert these when pace changes", "tool": "code", "args": {}}
+{"q": "alert me when pace changes but only when low breaks with volume support", "tool": "create_alert", "args": {"target": "stocks", "metric": "pace_low", "filters": [{"col": "fut_vol5", "op": ">=", "value": 1.5}]}, "model": {"target": "stocks", "metric": "pace_change"}}
+{"q": "alert me pace changes on high break with rvol", "tool": "create_alert", "args": {"target": "stocks", "metric": "pace_high", "filters": [{"col": "rvol", "op": ">=", "value": 2}]}}
+{"q": "alert me pace changes on low break with fut volume, rvol and stock volume", "tool": "create_alert", "args": {"target": "stocks", "metric": "pace_low", "filters": [{"col": "fut_vol5", "op": ">=", "value": 1.5}, {"col": "rvol", "op": ">=", "value": 2}, {"col": "vol5", "op": ">=", "value": 2}]}}
+{"q": "alert me when any bank stock breaks yesterday low with fut vol 3x", "tool": "create_alert", "args": {"target": "stocks", "metric": "pdl_down", "sector": "NIFTY BANK", "filters": [{"col": "fut_vol5", "op": ">=", "value": 3}]}}
+{"q": "alert me when pace changes and low tute volume saathe", "tool": "create_alert", "args": {"target": "stocks", "metric": "pace_low", "filters": [{"col": "fut_vol5", "op": ">=", "value": 1.5}]}}
+{"q": "alert me when stock open=high and decrease 0.5% after open", "tool": "create_alert", "args": {"target": "stocks", "metric": "screen", "conditions": [{"left": "open", "op": "=", "right": "high"}, {"left": "price", "op": "<=", "right": "open", "pct": -0.5}]}}
+{"q": "alert me when any stock open = low and goes 1% above open", "tool": "create_alert", "args": {"target": "stocks", "metric": "screen", "conditions": [{"left": "open", "op": "=", "right": "low"}, {"left": "price", "op": ">=", "right": "open", "pct": 1}]}}
+{"q": "alert me when any metal stock open = high", "tool": "create_alert", "args": {"target": "stocks", "metric": "screen", "sector": "NIFTY METAL", "conditions": [{"left": "open", "op": "=", "right": "high"}]}}
+{"q": "alert me when RELIANCE goes above previous day high and above vwap", "tool": "create_alert", "args": {"target": "stocks", "metric": "screen", "symbols": ["RELIANCE"], "conditions": [{"left": "price", "op": ">", "right": "pdh"}, {"left": "price", "op": ">", "right": "vwap"}]}, "alt": [["create_alert", {}]]}
+{"q": "alert me when nykaa break todays low", "tool": "create_alert", "args": {"target": "stocks", "metric": "new_low", "symbols": ["NYKAA"]}, "model": {"target": "stocks", "metric": "near_low", "symbols": ["NYKAA"]}}
+{"q": "alert me when nykaa makes new day low", "tool": "create_alert", "args": {"target": "stocks", "metric": "new_low", "symbols": ["NYKAA"]}, "model": {"target": "stocks", "metric": "new_high", "symbols": ["NYKAA"]}}
+{"q": "alert me when watchlist stock break todays low", "tool": "create_alert", "args": {"target": "stocks", "metric": "new_low", "universe": "watchlist"}, "model": {"target": "stocks", "metric": "new_low"}}
+{"q": "alert me when reliance todays high tode tyare kahe", "tool": "create_alert", "args": {"target": "stocks", "metric": "new_high", "symbols": ["RELIANCE"]}}
+{"q": "alert me when nifty break today low", "tool": "create_alert", "args": {"target": "index", "metric": "day_low_down", "symbols": ["NIFTY 50"]}}
+{"q": "alert me when nykaa near today's low 0.2%", "tool": "create_alert", "args": {"target": "stocks", "metric": "near_low", "symbols": ["NYKAA"], "op": "<=", "value": 0.2}}
+{"q": "alert me when flagged stocks cross above vwap", "tool": "create_alert", "args": {"target": "stocks", "metric": "vwap_up", "universe": "setups"}}
+{"q": "alert me when watchlist ma koi low tode", "tool": "create_alert", "args": {"target": "stocks", "metric": "new_low", "universe": "watchlist"}}
+{"q": "alert me when watchlist stock crosses below vwap", "tool": "create_alert", "args": {"target": "stocks", "metric": "vwap_down", "universe": "watchlist"}}
+{"q": "alert me when TCS breaks today's high", "tool": "create_alert", "args": {"target": "stocks", "metric": "new_high", "symbols": ["TCS"]}}
+{"q": "alert me when any stock breaks yesterday high", "tool": "create_alert", "args": {"target": "stocks", "metric": "pdh_up", "symbols": []}}
+{"q": "alert me when banknifty makes new day high", "tool": "create_alert", "args": {"target": "index", "metric": "day_high_up", "symbols": ["NIFTY BANK"]}}
+{"q": "alert me when nykaa slips under today's low", "tool": "create_alert", "args": {"target": "stocks", "metric": "new_low", "symbols": ["NYKAA"]}}
+{"q": "alert me when tcs drops below yesterday low", "tool": "create_alert", "args": {"target": "stocks", "metric": "pdl_down", "symbols": ["TCS"]}}
+{"q": "alert me when infy goes over today's high", "tool": "create_alert", "args": {"target": "stocks", "metric": "new_high", "symbols": ["INFY"]}}
+{"q": "alert me when sbin goes beneath vwap", "tool": "create_alert", "args": {"target": "stocks", "metric": "vwap_down", "symbols": ["SBIN"]}}
+{"q": "alert me when hdfcbank climbs above vwap", "tool": "create_alert", "args": {"target": "stocks", "metric": "vwap_up", "symbols": ["HDFCBANK"]}}
+{"q": "alert me when any stock sinks to a new day low", "tool": "create_alert", "args": {"target": "stocks", "metric": "new_low", "symbols": []}}

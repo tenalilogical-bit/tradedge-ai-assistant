@@ -1,0 +1,175 @@
+{"q": "top gainers last 5 days", "tool": "top_symbols", "args": {"metric": "gain", "days": 5}}
+{"q": "biggest losers this week", "tool": "top_symbols", "args": {"metric": "gain", "days": 5, "order": "bottom"}}
+{"q": "highest volume last 3 days", "tool": "top_symbols", "args": {"metric": "volume", "days": 3}}
+{"q": "which stocks had most OI build up in last 5 sessions", "tool": "top_symbols", "args": {"metric": "oi", "days": 5}}
+{"q": "highest pace yesterday", "tool": "top_symbols", "args": {"metric": "pace", "days": 1}}
+{"q": "top rvol stocks last 10 days", "tool": "top_symbols", "args": {"metric": "rvol", "days": 10}}
+{"q": "chhela 3 divas ma sauthi vadhare volume kya stock ma", "tool": "top_symbols", "args": {"metric": "volume", "days": 3}}
+{"q": "છેલ્લા 5 દિવસમાં સૌથી વધુ વધેલા શેર", "tool": "top_symbols", "args": {"metric": "gain", "days": 5}}
+{"q": "bank stocks top gainers last 5 days", "tool": "top_symbols", "args": {"metric": "gain", "days": 5, "sector": "NIFTY BANK"}}
+{"q": "which stocks broke previous day high yesterday", "tool": "level_breaks_history", "args": {"kind": "prev_high"}}
+{"q": "stocks that broke prior day low on 2026-11-02", "tool": "level_breaks_history", "args": {"kind": "prev_low", "day": "2026-11-02"}}
+{"q": "RELIANCE last 10 days", "tool": "symbol_history", "args": {"symbol": "RELIANCE", "days": 10}}
+{"q": "how has hdfc bank moved this week", "tool": "symbol_history", "args": {"symbol": "HDFCBANK", "days": 5}}
+{"q": "how did SAGA stage perform last 30 sessions", "tool": "signal_performance", "args": {"by": "stage", "value": "SAGA", "sessions": 30}}
+{"q": "READY tier performance", "tool": "signal_performance", "args": {"by": "tier", "value": "READY"}}
+{"q": "which signal stage works best for shorts", "tool": "signal_performance", "args": {"by": "stage", "side": "SHORT"}}
+{"q": "top gainers right now", "tool": "live_top", "args": {"metric": "pct"}}
+{"q": "highest volume today", "tool": "live_top", "args": {"metric": "volume"}}
+{"q": "hmna sauthi vadhare OI kya che", "tool": "live_top", "args": {"metric": "oi"}}
+{"q": "highest pace now", "tool": "live_top", "args": {"metric": "pace"}}
+{"q": "worst performers today", "tool": "live_top", "args": {"metric": "pct", "order": "bottom"}}
+{"q": "stocks above yesterday high now", "tool": "live_level_breaks", "args": {"kind": "prev_high"}}
+{"q": "aaje yesterday low break kya stock ma thayu", "tool": "live_level_breaks", "args": {"kind": "prev_low"}}
+{"q": "stocks above vwap now", "tool": "live_vwap", "args": {"side": "above"}}
+{"q": "IT stocks below VWAP right now", "tool": "live_vwap", "args": {"side": "below", "sector": "NIFTY IT"}}
+{"q": "SBI now", "tool": "live_symbol", "args": {"symbol": "SBIN"}}
+{"q": "what is INFY doing right now", "tool": "live_symbol", "args": {"symbol": "INFY"}}
+{"q": "any long signals now", "tool": "current_candidates", "args": {"side": "LONG"}}
+{"q": "short setups in bank right now", "tool": "current_candidates", "args": {"side": "SHORT", "sector": "NIFTY BANK"}}
+{"q": "best stocks right now", "tool": "current_candidates", "args": {}}
+{"q": "market breadth", "tool": "market_mood", "args": {}}
+{"q": "should I buy TATAMOTORS", "tool": "cannot_answer", "args": {}}
+{"q": "what will nifty do tomorrow", "tool": "cannot_answer", "args": {}}
+{"q": "give me a target for RELIANCE", "tool": "cannot_answer", "args": {}}
+{"q": "hello how are you", "tool": "cannot_answer", "args": {}}
+{"q": "which stocks broke yesterday's low today", "tool": "live_level_breaks", "args": {"kind": "prev_low"}}
+{"q": "આજે ગઈકાલનો high તોડ્યો હોય તેવા શેર", "tool": "live_level_breaks", "args": {"kind": "prev_high"}}
+{"q": "highest gainer today with price", "tool": "live_top", "args": {"metric": "pct", "show": ["price"]}}
+{"q": "top gainers today with price and rvol", "tool": "live_top", "args": {"metric": "pct", "show": ["price", "rvol"]}}
+{"q": "highest volume today saathe oi pan batavo", "tool": "live_top", "args": {"metric": "volume", "show": ["oi"]}}
+{"q": "which stock jumped highest in last 15 mins", "tool": "live_top", "args": {"metric": "pct", "window_min": 15}}
+{"q": "biggest fall in last 5 minutes", "tool": "live_top", "args": {"metric": "pct", "window_min": 5, "order": "bottom"}}
+{"q": "volume spike last 10 min", "tool": "live_top", "args": {"metric": "volume", "window_min": 10}}
+{"q": "OI build up in last 30 min", "tool": "live_top", "args": {"metric": "oi", "window_min": 30}}
+{"q": "stocks above vwap now with volume and rvol", "tool": "live_vwap", "args": {"side": "above", "show": ["volume", "rvol"]}}
+{"q": "watchlist score", "tool": "watchlist_status", "args": {"sort_by": "score"}}
+{"q": "watchlist prox", "tool": "watchlist_status", "args": {"sort_by": "prox"}}
+{"q": "watchlist stock oi build up since open", "tool": "watchlist_status", "args": {"sort_by": "oi"}}
+{"q": "watchlist ma kon breaking che", "tool": "watchlist_status", "args": {"only_flagged": true}}
+{"q": "today's alerts for TCS", "tool": "recent_alerts", "args": {"symbol": "TCS"}}
+{"q": "aaje kya alerts aavya", "tool": "recent_alerts", "args": {}}
+{"q": "most advancing sector last 15 min", "tool": "live_sector_rank", "args": {"metric": "price", "window_min": 15}}
+{"q": "which sector is falling most today", "tool": "live_sector_rank", "args": {"metric": "price", "order": "bottom"}}
+{"q": "sector breadth now", "tool": "live_sector_rank", "args": {"metric": "breadth"}}
+{"q": "best sector this week", "tool": "sector_history", "args": {"days": 5}}
+{"q": "market kevu che", "tool": "market_mood", "args": {}}
+{"q": "overall market mood right now", "tool": "market_mood", "args": {}}
+{"q": "is breadth improving in last 30 min", "tool": "breadth_trend", "args": {"window_min": 30}}
+{"q": "what is PCR of nifty", "tool": "cannot_answer", "args": {}}
+{"q": "FII data today", "tool": "cannot_answer", "args": {}}
+{"q": "and in NIFTY IT?", "prev": ["top gainers right now", "live_top", {"metric": "pct"}], "tool": "live_top", "args": {"metric": "pct", "sector": "NIFTY IT"}}
+{"q": "with volume", "prev": ["stocks above vwap now", "live_vwap", {"side": "above"}], "tool": "live_vwap", "args": {"side": "above", "show": ["volume"]}}
+{"q": "last 30 min instead", "prev": ["which stock jumped highest in last 15 mins", "live_top", {"metric": "pct", "window_min": 15}], "tool": "live_top", "args": {"metric": "pct", "window_min": 30}}
+{"q": "RELIANCE now", "prev": ["top gainers right now", "live_top", {"metric": "pct"}], "tool": "live_symbol", "args": {"symbol": "RELIANCE"}}
+{"q": "stocks below yesterday's low with rvol", "tool": "live_level_breaks", "args": {"kind": "prev_low", "show": ["rvol"]}}
+{"q": "long signals now with price", "tool": "current_candidates", "args": {"side": "LONG", "show": ["price"]}}
+{"q": "watchlist with volume", "tool": "watchlist_status", "args": {"show": ["volume"]}}
+{"q": "from that, which have rvol above 2?", "prev": [["stocks above vwap now", "live_vwap", {"side": "above"}, 10]], "tool": "live_vwap", "args": {"side": "above", "from_previous": 1, "filters": [{"col": "rvol", "op": ">", "value": 2}]}}
+{"q": "of these, which are bank stocks", "prev": [["stocks above vwap now", "live_vwap", {"side": "above"}, 10]], "tool": "live_vwap", "args": {"side": "above", "from_previous": 1, "sector": "NIFTY BANK"}}
+{"q": "aama thi kon yesterday high upar che", "prev": [["top gainers today", "live_top", {"metric": "pct"}, 10]], "tool": "live_level_breaks", "args": {"kind": "prev_high", "from_previous": 1}}
+{"q": "from the vwap list, price below 500", "prev": [["top gainers today", "live_top", {"metric": "pct"}, 10], ["stocks above vwap now", "live_vwap", {"side": "above"}, 10]], "tool": "live_vwap", "args": {"side": "above", "from_previous": 2, "filters": [{"col": "price", "op": "<", "value": 500}]}}
+{"q": "of these which are flagged by scanner", "prev": [["watchlist score", "watchlist_status", {"sort_by": "score"}, 8]], "tool": "current_candidates", "args": {"from_previous": 1}, "alt": [["watchlist_status", {"only_flagged": true}]]}
+{"q": "top gainers last 5 days", "prev": [["stocks above vwap now", "live_vwap", {"side": "above"}, 10]], "tool": "top_symbols", "args": {"metric": "gain", "days": 5, "from_previous": 0}}
+{"q": "market mood", "prev": [["stocks above vwap now", "live_vwap", {"side": "above"}, 10], ["top gainers today", "live_top", {"metric": "pct"}, 10]], "tool": "market_mood", "args": {}}
+{"q": "stocks above vwap with rvol above 3", "prev": [], "tool": "live_vwap", "args": {"side": "above", "filters": [{"col": "rvol", "op": ">", "value": 3}], "from_previous": 0}}
+{"q": "which stock fallen more after opening", "tool": "live_top", "args": {"metric": "open", "order": "bottom"}}
+{"q": "top gainers since open", "tool": "live_top", "args": {"metric": "open"}}
+{"q": "opening thi sauthi vadhare kon vadhyu", "tool": "live_top", "args": {"metric": "open"}}
+{"q": "top 3 gainer in last week", "tool": "top_symbols", "args": {"metric": "gain", "days": 5, "limit": 3}}
+{"q": "which stock give high return in last week", "tool": "top_symbols", "args": {"metric": "gain", "days": 5}}
+{"q": "top gainers today", "tool": "live_top", "args": {"metric": "pct"}}
+{"q": "aaje sauthi vadhare volume kya che", "tool": "live_top", "args": {"metric": "volume"}}
+{"q": "yesterday top gainers", "tool": "top_symbols", "args": {"metric": "gain", "days": 1}}
+{"q": "top gainers on 30th oct", "tool": "top_symbols", "args": {"metric": "gain", "days": 1, "end_day": "2026-10-30"}}
+{"q": "top volume last 3 days", "tool": "top_symbols", "args": {"metric": "volume", "days": 3}}
+{"q": "lowest pace stocks last week", "tool": "top_symbols", "args": {"metric": "pace", "days": 5, "order": "bottom"}}
+{"q": "which stocks gapped up today", "tool": "live_top", "args": {"metric": "gap"}}
+{"q": "gap down stocks", "tool": "live_top", "args": {"metric": "gap", "order": "bottom"}}
+{"q": "which stocks made new day high in last 15 min", "tool": "live_top", "args": {"metric": "new_high", "window_min": 15}}
+{"q": "chhela 10 minute ma navo low kone banavyo", "tool": "live_top", "args": {"metric": "new_low", "window_min": 10}}
+{"q": "highest oi build up last 30 min", "tool": "live_top", "args": {"metric": "oi", "window_min": 30}}
+{"q": "reliance vs hdfc bank", "tool": "compare_symbols", "args": {"symbols": ["RELIANCE", "HDFCBANK"]}}
+{"q": "compare sbi, icici bank and axis bank", "tool": "compare_symbols", "args": {"symbols": ["SBIN", "ICICIBANK", "AXISBANK"]}}
+{"q": "tcs kem che last 15 min", "tool": "live_symbol", "args": {"symbol": "TCS"}}
+{"q": "nykaa ma pace ketli var break thayu", "tool": "live_symbol", "args": {"symbol": "NYKAA"}}
+{"q": "reliance last 10 days", "tool": "symbol_history", "args": {"symbol": "RELIANCE", "days": 10}}
+{"q": "last 5 alerts for infosys", "tool": "recent_alerts", "args": {"symbol": "INFY", "limit": 5}}
+{"q": "which one has highest volume from that", "prev": ["top gainers today", "live_top", {"metric": "pct"}, 10], "tool": "live_top", "args": {"metric": "volume", "from_previous": 1}}
+{"q": "from that which are above vwap", "prev": ["top gainers today", "live_top", {"metric": "pct"}, 10], "tool": "live_vwap", "args": {"side": "above", "from_previous": 1}}
+{"q": "only rvol above 2", "prev": ["stocks above vwap now", "live_vwap", {"side": "above"}, 14], "tool": "live_vwap", "args": {"side": "above", "filters": [{"col": "rvol", "op": ">", "value": 2}]}}
+{"q": "top 3 only", "prev": ["top gainers today", "live_top", {"metric": "pct"}, 10], "tool": "live_top", "args": {"metric": "pct", "limit": 3, "from_previous": 0}}
+{"q": "aama thi koi watchlist ma che?", "prev": ["top gainers today", "live_top", {"metric": "pct"}, 10], "tool": "watchlist_status", "args": {"from_previous": 1}}
+{"q": "which sector is weakest now", "tool": "live_sector_rank", "args": {"order": "bottom"}}
+{"q": "best sector last week", "tool": "sector_history", "args": {"days": 5}}
+{"q": "market breadth last 60 min", "tool": "breadth_trend", "args": {"window_min": 60}}
+{"q": "overall market kevu che", "tool": "market_mood", "args": {}}
+{"q": "stocks below vwap with rvol and oi", "tool": "live_vwap", "args": {"side": "below", "show": ["rvol", "oi"]}}
+{"q": "which broke yesterday low today", "tool": "live_level_breaks", "args": {"kind": "prev_low"}}
+{"q": "on 3rd nov which stocks broke previous day high", "tool": "level_breaks_history", "args": {"kind": "prev_high", "day": "2026-11-03"}}
+{"q": "any short setups now", "tool": "current_candidates", "args": {"side": "SHORT"}}
+{"q": "watchlist short side by score", "tool": "watchlist_status", "args": {"side": "SHORT", "sort_by": "score"}}
+{"q": "should I buy tatamotors now", "tool": "cannot_answer", "args": {}}
+{"q": "what is nifty pcr", "tool": "cannot_answer", "args": {}}
+{"q": "target for reliance tomorrow", "tool": "cannot_answer", "args": {}}
+{"q": "top 5 sector fallen from open", "tool": "live_sector_rank", "args": {"metric": "open", "order": "bottom", "limit": 5}}
+{"q": "aaje open thi kayo sector sauthi vadhyo", "tool": "live_sector_rank", "args": {"metric": "open"}}
+{"q": "top 3 sectors right now", "tool": "live_sector_rank", "args": {"metric": "price", "limit": 3}}
+{"q": "weakest 3 sectors last week", "tool": "sector_history", "args": {"days": 5, "order": "bottom", "limit": 3}}
+{"q": "which stocks are just above vwap, closest first", "tool": "live_vwap", "args": {"side": "above", "order": "bottom"}}
+{"q": "stocks that barely broke yesterday high today", "tool": "live_level_breaks", "args": {"kind": "prev_high", "order": "bottom"}}
+{"q": "top 3 watchlist stocks by oi", "tool": "watchlist_status", "args": {"sort_by": "oi", "limit": 3}}
+{"q": "bank stocks in my watchlist", "tool": "watchlist_status", "args": {"sector": "NIFTY BANK"}}
+{"q": "lowest score scanner setups", "tool": "current_candidates", "args": {"order": "bottom"}}
+{"q": "top gainers today by delivery percentage", "tool": "live_top", "args": {"metric": "pct", "unsupported": true}}
+{"q": "sectors with highest rvol now", "tool": "live_sector_rank", "args": {"unsupported": true}, "alt": [["cannot_answer", {}]]}
+{"q": "fut vol increase highest in last 15 min in fmcg", "tool": "live_top", "args": {"metric": "fut_volume", "window_min": 15, "sector": "NIFTY FMCG"}}
+{"q": "futures volume highest today", "tool": "live_top", "args": {"metric": "fut_volume"}}
+{"q": "which stock has crossed previous pace in last 5 min", "tool": "live_top", "args": {"metric": "pace_cross", "window_min": 5}}
+{"q": "chhela 15 min ma pace kone todyu", "tool": "live_top", "args": {"metric": "pace_cross", "window_min": 15}}
+{"q": "pace increased most in last 10 min", "tool": "live_top", "args": {"metric": "pace", "window_min": 10}}
+{"q": "iv rising most last 30 min", "tool": "live_top", "args": {"metric": "iv", "window_min": 30}}
+{"q": "stocks furthest from vwap", "tool": "live_top", "args": {"metric": "vwap"}, "alt": [["live_vwap", {}]]}
+{"q": "highest scanner score stocks now", "tool": "live_top", "args": {"metric": "score"}, "alt": [["current_candidates", {}]]}
+{"q": "which stock fell most in last 10 min", "tool": "live_top", "args": {"metric": "pct", "window_min": 10, "order": "bottom"}}
+{"q": "oi build up highest last 15 min in bank", "tool": "live_top", "args": {"metric": "oi", "window_min": 15, "sector": "NIFTY BANK"}}
+{"q": "top 5 volume spike last 10 min with oi", "tool": "live_top", "args": {"metric": "volume", "window_min": 10, "limit": 5, "show": ["oi"]}}
+{"q": "rvol above 2 and above vwap stocks", "tool": "live_vwap", "args": {"side": "above", "filters": [{"col": "rvol", "op": ">", "value": 2}]}}
+{"q": "metal stocks new day high last 15 min", "tool": "live_top", "args": {"metric": "new_high", "window_min": 15, "sector": "NIFTY METAL"}}
+{"q": "which stock just break vwap", "tool": "live_top", "args": {"metric": "vwap_up"}}
+{"q": "which stock just below vwap in last 15 min", "tool": "live_top", "args": {"metric": "vwap_down", "window_min": 15}}
+{"q": "abhi kone vwap todyu", "tool": "live_top", "args": {"metric": "vwap_up"}}
+{"q": "which stocks crossed yesterday high in last 10 min", "tool": "live_top", "args": {"metric": "pdh_up", "window_min": 10}}
+{"q": "just broke yesterday low", "tool": "live_top", "args": {"metric": "pdl_down"}}
+{"q": "stocks that just went above today's open", "tool": "live_top", "args": {"metric": "open_up"}}
+{"q": "bank stocks just crossed vwap last 5 min", "tool": "live_top", "args": {"metric": "vwap_up", "window_min": 5, "sector": "NIFTY BANK"}}
+{"q": "which crossed pace band in last 15 min", "tool": "live_top", "args": {"metric": "pace_cross", "window_min": 15}}
+{"q": "which stocks changed pace in last 15 min", "tool": "live_top", "args": {"metric": "pace_change", "window_min": 15}}
+{"q": "chhela 10 min ma pace kona badlaya", "tool": "live_top", "args": {"metric": "pace_change", "window_min": 10}}
+{"q": "which stocks pace changed on low break last 15 min", "tool": "live_top", "args": {"metric": "pace_low", "window_min": 15}}
+{"q": "stocks with fut vol rising and above vwap", "tool": "live_vwap", "args": {"side": "above"}}
+{"q": "stocks where open = high", "tool": "live_screen", "args": {"conditions": [{"left": "open", "op": "=", "right": "high"}]}}
+{"q": "open=low stocks", "tool": "live_screen", "args": {"conditions": [{"left": "open", "op": "=", "right": "low"}]}}
+{"q": "open = high and down 0.5% from open", "tool": "live_screen", "args": {"conditions": [{"left": "open", "op": "=", "right": "high"}, {"left": "price", "op": "<=", "right": "open", "pct": -0.5}]}}
+{"q": "stocks above previous day high and above vwap", "tool": "live_screen", "args": {"conditions": [{"left": "price", "op": ">", "right": "pdh"}, {"left": "price", "op": ">", "right": "vwap"}]}}
+{"q": "stocks trading below yesterday's low", "tool": "live_screen", "args": {"conditions": [{"left": "price", "op": "<", "right": "pdl"}]}}
+{"q": "stocks whose day range is above 2%", "tool": "live_screen", "args": {"conditions": [{"left": "range_pct", "op": ">", "value": 2}]}}
+{"q": "gap up stocks still above open", "tool": "live_screen", "args": {"conditions": [{"left": "gap", "op": ">", "value": 0}, {"left": "price", "op": ">", "right": "open"}]}}
+{"q": "open = high stocks in bank", "tool": "live_screen", "args": {"conditions": [{"left": "open", "op": "=", "right": "high"}], "sector": "NIFTY BANK"}}
+{"q": "stocks below open with rvol above 2", "tool": "live_screen", "args": {"conditions": [{"left": "price", "op": "<", "right": "open"}, {"left": "rvol", "op": ">", "value": 2}]}}
+{"q": "aaje open = low vala stock batavo", "tool": "live_screen", "args": {"conditions": [{"left": "open", "op": "=", "right": "low"}]}}
+{"q": "which stocks made new day low in last 15 min", "tool": "live_top", "args": {"metric": "new_low", "window_min": 15}}
+{"q": "watchlist stocks where open = high", "tool": "live_screen", "args": {"universe": "watchlist", "conditions": [{"left": "open", "op": "=", "right": "high"}]}}
+{"q": "watchlist stocks above vwap top gainers", "tool": "live_top", "args": {"metric": "pct", "universe": "watchlist"}}
+{"q": "what is low of nykaa", "tool": "live_value", "args": {"symbols": ["NYKAA"], "fields": ["low"]}}
+{"q": "what is high of nykaa", "tool": "live_value", "args": {"symbols": ["NYKAA"], "fields": ["high"]}}
+{"q": "nykaa high and vwap", "tool": "live_value", "args": {"symbols": ["NYKAA"], "fields": ["high", "vwap"]}}
+{"q": "prev close of tcs", "tool": "live_value", "args": {"symbols": ["TCS"], "fields": ["pdc"]}}
+{"q": "yesterday high of reliance", "tool": "live_value", "args": {"symbols": ["RELIANCE"], "fields": ["pdh"]}}
+{"q": "pace of reliance", "tool": "live_value", "args": {"symbols": ["RELIANCE"], "fields": ["pace"]}}
+{"q": "what is open of sbin", "tool": "live_value", "args": {"symbols": ["SBIN"], "fields": ["open"]}}
+{"q": "fut vol of infy now", "tool": "live_value", "args": {"symbols": ["INFY"], "fields": ["fut_vol5"]}}
+{"q": "nifty high", "tool": "live_value", "args": {"symbols": ["IDX:NIFTY 50"], "fields": ["high"]}}
+{"q": "vix now", "tool": "live_value", "args": {"symbols": ["IDX:INDIA VIX"]}}
+{"q": "when did nykaa make today's low", "tool": "live_value", "args": {"symbols": ["NYKAA"], "fields": ["low"]}}
+{"q": "how is nykaa doing", "tool": "live_symbol", "args": {"symbol": "NYKAA"}}
