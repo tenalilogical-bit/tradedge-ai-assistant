@@ -47,13 +47,18 @@ TOUR = [("q", "top gainers today with price and rvol"), ("q", "what is low of ny
 
 
 class Console:
-    """Stands in for ai_chat.Telegram: prints replies, remembers the last buttons."""
-    def __init__(self):
-        self.buttons = []
+    """Stands in for ai_chat.Telegram: prints replies, remembers the last buttons.
+    `log` (optional list) records the conversation for tools/make_demo_media.py."""
+    def __init__(self, log=None, quiet=False):
+        self.buttons, self.log, self.quiet = [], log, quiet
 
     def send(self, chat, text, buttons=None):
-        print("\n" + "─" * 60 + "\n" + text)
         self.buttons = [b for row in (buttons or []) for b in row]
+        if self.log is not None:
+            self.log.append(("bot", text, [lbl for lbl, _d in self.buttons]))
+        if self.quiet:
+            return True
+        print("\n" + "─" * 60 + "\n" + text)
         if self.buttons:
             print("   " + "   ".join("[%d] %s" % (i + 1, lbl) for i, (lbl, _d) in enumerate(self.buttons)))
         return True
@@ -104,12 +109,13 @@ def routers(offline):
     return q, a
 
 
-def tick(market, bot, minutes):
+def tick(market, bot, minutes, quiet=False):
     for _ in range(max(1, minutes)):
         market.step()
         ai_alerts.check_alerts(market.ctx, bot.alerts, lambda chat, text: bot._reply(chat, text),
                                now=market.now.timestamp(), day=TODAY)
-    print("\n⏱  fake clock %s" % market.now.strftime("%H:%M"))
+    if not quiet:
+        print("\n⏱  fake clock %s" % market.now.strftime("%H:%M"))
 
 
 def handle(market, bot, tg, line):
@@ -135,33 +141,57 @@ def handle(market, bot, tg, line):
     return True
 
 
+def build(offline, log=None, quiet=False):
+    """(market, bot, console) wired exactly like the Telegram bot, on a fresh fake market."""
+    work = tempfile.mkdtemp(prefix="tradedge_demo_")
+    market = Market(work)
+    ai_chat.MAX_PER_MIN = 60                  # one local user; the 6/min limit protects the free quota
+    tg = Console(log, quiet)
+    qr, ar = routers(offline)
+    bot = ai_chat.Bot(market.ctx, qr, tg, [CHAT], os.path.join(work, "logs"),
+                      alerts=ai_alerts.AlertStore(os.path.join(work, "data", "ai_alerts.json")), alert_router=ar)
+    return market, bot, tg
+
+
+def run_tour(steps=TOUR, log=None, quiet=False):
+    """Offline scripted run. With `log`, records ("user", text) / ("press", label) /
+    ("clock", "HH:MM") / ("bot", text, buttons) in order."""
+    market, bot, tg = build(True, log, quiet)
+    rec = log.append if log is not None else (lambda x: None)
+    for kind, val in steps:
+        if kind == "q":
+            rec(("user", val))
+            if not quiet:
+                print("\n\n>>> " + val)
+            handle(market, bot, tg, val)
+        elif kind == "btn":
+            rec(("press", tg.buttons[val - 1][0] if 0 < val <= len(tg.buttons) else str(val)))
+            if not quiet:
+                print("\n\n>>> [press %d]" % val)
+            handle(market, bot, tg, str(val))
+        else:
+            if not quiet:
+                print("\n\n>>> /tick %d" % val)
+            n = len(log) if log is not None else 0
+            tick(market, bot, val, quiet)
+            if log is not None:                 # the clock line goes before any ping it caused
+                log.insert(n, ("clock", "%d min later · %s" % (val, market.now.strftime("%H:%M"))))
+    return market
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--offline", action="store_true", help="no API key: replay recorded model outputs")
     ap.add_argument("--tour", action="store_true", help="scripted walk-through (offline)")
     a = ap.parse_args()
     offline = a.offline or a.tour or not ai_llm._cfg("GEMINI_API_KEY")
-    work = tempfile.mkdtemp(prefix="tradedge_demo_")
-    market = Market(work)
-    ai_chat.MAX_PER_MIN = 60                  # one local user; the 6/min limit protects the free quota
-    tg = Console()
-    qr, ar = routers(offline)
-    bot = ai_chat.Bot(market.ctx, qr, tg, [CHAT], os.path.join(work, "logs"),
-                      alerts=ai_alerts.AlertStore(os.path.join(work, "data", "ai_alerts.json")), alert_router=ar)
-    print("TradEdge AI assistant · fake market %s %s · %s" % (
-        TODAY, market.now.strftime("%H:%M"), "OFFLINE replay (no key)" if offline else "Gemini " + qr.model))
     if a.tour:
-        for kind, val in TOUR:
-            if kind == "q":
-                print("\n\n>>> " + val)
-                handle(market, bot, tg, val)
-            elif kind == "btn":
-                print("\n\n>>> [press %d]" % val)
-                handle(market, bot, tg, str(val))
-            else:
-                print("\n\n>>> /tick %d" % val)
-                tick(market, bot, val)
+        print("TradEdge AI assistant · fake market %s · OFFLINE replay (no key)" % TODAY)
+        run_tour()
         return 0
+    market, bot, tg = build(offline)
+    print("TradEdge AI assistant · fake market %s %s · %s" % (
+        TODAY, market.now.strftime("%H:%M"), "OFFLINE replay (no key)" if offline else "Gemini " + bot.router.model))
     print("Type a question (/try for ideas, /tick 5 to move the clock, /quit).")
     while True:
         try:
