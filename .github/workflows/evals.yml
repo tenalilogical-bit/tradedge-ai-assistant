@@ -1,0 +1,41 @@
+name: evals
+# Real-model evals: does Gemini pick the right tool and arguments for 250+ real sentences?
+# Runs when the AI code or the cases change, or by hand (Actions -> evals -> Run workflow).
+# Needs the GEMINI_EVAL_API_KEY secret from a SEPARATE Google Cloud project, so the bot's own
+# free quota (500 requests/day/model) is never used. One full run is about 260 requests.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["ai_*.py", "evals/**"]
+concurrency:
+  group: evals
+  cancel-in-progress: true
+jobs:
+  evals:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      GEMINI_EVAL_API_KEY: ${{ secrets.GEMINI_EVAL_API_KEY }}
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Skip when the secret is not set
+        if: env.GEMINI_EVAL_API_KEY == ''
+        run: echo "::notice::GEMINI_EVAL_API_KEY is not set - real-model evals skipped"
+      - uses: actions/setup-python@v5
+        if: env.GEMINI_EVAL_API_KEY != ''
+        with:
+          python-version: "3.12"
+          cache: pip
+      - if: env.GEMINI_EVAL_API_KEY != ''
+        run: pip install -r requirements.txt
+      - name: Tests + alert evals + question evals -> GO / NO-GO (pass mark 90%)
+        if: env.GEMINI_EVAL_API_KEY != ''
+        run: python predeploy.py
+      - uses: actions/upload-artifact@v4
+        if: always() && env.GEMINI_EVAL_API_KEY != ''
+        with:
+          name: eval-results
+          path: evals/results_*.jsonl
+          if-no-files-found: ignore
