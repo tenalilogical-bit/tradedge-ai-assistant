@@ -1,7 +1,7 @@
 # TradEdge AI Assistant
 
-[![tests](https://github.com/YOUR-USERNAME/tradedge-ai-assistant/actions/workflows/tests.yml/badge.svg)](https://github.com/YOUR-USERNAME/tradedge-ai-assistant/actions/workflows/tests.yml)
-[![evals](https://github.com/YOUR-USERNAME/tradedge-ai-assistant/actions/workflows/evals.yml/badge.svg)](https://github.com/YOUR-USERNAME/tradedge-ai-assistant/actions/workflows/evals.yml)
+[![tests](https://github.com/tenalilogical-bit/tradedge-ai-assistant/actions/workflows/tests.yml/badge.svg)](https://github.com/tenalilogical-bit/tradedge-ai-assistant/actions/workflows/tests.yml)
+[![evals](https://github.com/tenalilogical-bit/tradedge-ai-assistant/actions/workflows/evals.yml/badge.svg)](https://github.com/tenalilogical-bit/tradedge-ai-assistant/actions/workflows/evals.yml)
 
 A Telegram assistant for a live NSE F&O trading dashboard. Ask in plain English (or Gujarati / Hinglish),
 get answers computed from live market data, and set alerts in one sentence.
