@@ -1,3 +1,4 @@
+[README.md](https://github.com/user-attachments/files/34564285/README.md)
 # TradEdge AI Assistant
 
 [![tests](https://github.com/tenalilogical-bit/tradedge-ai-assistant/actions/workflows/tests.yml/badge.svg)](https://github.com/tenalilogical-bit/tradedge-ai-assistant/actions/workflows/tests.yml)
@@ -15,7 +16,12 @@ with zero model calls.
 > (`fake_market/`, a seeded random walk) so anyone can run it. The trading app, its scanner and its
 > strategy are not here.
 
-<!-- Demo: drag a short screen recording of the real Telegram bot here (GitHub web editor). -->
+<p align="center">
+  <img src="docs/demo.gif" width="560" alt="Chat demo: value lookup, open = high screen, sector rank, refusing trade advice, creating an alert and the alert firing">
+</p>
+<p align="center"><sub>Rendered from the real code's output on the simulated market (<code>tools/make_demo_media.py</code>), not drawn by hand.</sub></p>
+
+<!-- Live bot video: drag a short screen recording of the real Telegram bot here (GitHub web editor). -->
 
 ## Try it (2 minutes)
 
@@ -143,6 +149,8 @@ ai_*.py            the assistant (same files as the private app)
 demo.py            console version of the bot on the fake market
 fake_market/       seeded fake session + schema.sql (only the columns the tools read)
 state.py           public stand-in: F&O universe + sector map
+tools/             make_demo_media.py: rebuilds docs/demo.gif from the real tour output
+docs/              demo.gif, demo.png
 tests/             343 tests, no network
 evals/             real-model eval cases + runner
 .github/workflows  tests on every push; real-model evals when AI code changes
